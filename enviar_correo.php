@@ -11,18 +11,18 @@ use PHPMailer\PHPMailer\SMTP;
 $mail = new PHPMailer(true);
 
 try {
-    //2. Configuración del servidor.
+    //2. ConfiguraciÃ³n del servidor.
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;
-    $mail->isSMTP(); //Configurando el protocolo de envío.
-    $mail->Host = "smtp.gmail.com"; //Configurando el host SMTP (Outlook, Gmail, ProtonMail). Dependiendo del servicio de correo del destinatario, el nombre del host va a cambiar.                    //Set the SMTP server to send through
-    $mail->SMTPAuth = true; //Habilitando la autenticación SMTP.
-    $mail->Username = "correo.servidor@gmail.com"; //Usuario SMTP (A la configuración hay que darle acceso a una cuenta de correo).
-    $mail->Password = "MiClaveFalsa123456"; //Contraseña SMTP (A la configuración hay que darle acceso a una cuenta de correo).
+    $mail->isSMTP(); //Configurando el protocolo de envÃ­o.
+    $mail->Host = "smtp.gmail.com"; //Configurando el host SMTP (Outlook, Gmail, ProtonMail). Dependiendo del servicio de correo del destinatario, el nombre del host va a cambiar.
+    $mail->SMTPAuth = true; //Habilitando la autenticaciÃ³n SMTP.
+    $mail->Username = "correo.servidor@gmail.com"; //Usuario SMTP (A la configuraciÃ³n hay que darle acceso a una cuenta de correo).
+    $mail->Password = "MiClaveFalsa123456"; //ContraseÃ±a SMTP (A la configuraciÃ³n hay que darle acceso a una cuenta de correo).
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port = 465;              
     
-    $mail->setFrom("correo.servidor@gmail.com", "Daniel"); //Configurando quien envía el correo (Tiene que ser la cuenta a la cual se le dió acceso en la configuración del servidor).
-    $mail->addAddress("correo.destinatario@protonmail.com", "Daniel"); //Configurando a quien se le envía el correo.
+    $mail->setFrom("correo.servidor@gmail.com", "Daniel"); //Configurando quien envÃ­a el correo (Tiene que ser la cuenta a la cual se le diÃ³ acceso en la configuraciÃ³n del servidor).
+    $mail->addAddress("correo.destinatario@protonmail.com", "Daniel"); //Configurando a quien se le envÃ­a el correo.
     
     //4. Contenido.
     $mail->isHTML(true); //Configurando el correo para que soporte HTML.
